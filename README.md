@@ -2,22 +2,45 @@
 Laravel package - to create new directory in the storage directory
 
 # install
+```
 composer require qtran2015/storage-dir
+```
 
 # add to config/app.php Application Service Providers
+```
 Qtran2015\StorageDir\StorageDirProvider::class
+```
 
 # clear cache
+```
 php artisan optimize:clear
+```
 
-# examples
-use Qtran2015\StorageDir\StorageDir;
+# usage response statuses
+exists | created | failed
 
 # default read execute
-$response = StorageDir::setDir('test1/sub_dir1/sub_dir2')->execute();
+```
+$response = \Qtran2015\StorageDir\StorageDir::setDir('test1/dir_1/dir_2')->execute();
+```
 
 # read write execute
-$response = StorageDir::setDir('test2/sub_dir1/sub_dir2')->fullAccess()->execute();
+```
+$response = \Qtran2015\StorageDir\StorageDir::setDir('test2/dir_1/dir_2')
+        ->fullAccess()
+        ->execute();
+```
 
-# response statuses
-exists | created | failed
+# remove full access from a directory from provided path
+```
+$response = \Qtran2015\StorageDir\StorageDir::setDir('test2/dir_1/dir_2/dir_3')
+        ->removeFullAccessFrom('dir_1')
+        ->execute();
+```
+
+# give full access to a directory from provided path
+```
+$response = \Qtran2015\StorageDir\StorageDir::setDir('test1/dir_1/dir_2')
+        ->giveFullAccessTo('dir_2')
+        ->execute();
+```
