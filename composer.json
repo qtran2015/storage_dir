@@ -1,0 +1,19 @@
+{
+    "name": "qtran2015/storage-dir",
+    "description": "Manipulate directories in storage directory",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Qtran2015\\StorageDir\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Quoc Tran",
+            "email": "qtran2015@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
