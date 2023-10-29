@@ -34,13 +34,13 @@ $response = \Qtran2015\StorageDir\StorageDir::setDir('test2/dir_1/dir_2')
 # remove full access from a directory from provided path
 ```
 $response = \Qtran2015\StorageDir\StorageDir::setDir('test2/dir_1/dir_2/dir_3')
-        ->removeFullAccessFrom('dir_1')
+        ->removeFullAccessDir('dir_1')
         ->execute();
 ```
 
 # give full access to a directory from provided path
 ```
 $response = \Qtran2015\StorageDir\StorageDir::setDir('test1/dir_1/dir_2')
-        ->giveFullAccessTo('dir_2')
+        ->giveFullAccessDir('dir_2')
         ->execute();
 ```

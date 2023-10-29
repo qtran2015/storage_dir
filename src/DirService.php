@@ -44,17 +44,19 @@ class DirService {
     }
 
     /**
+     * @param string $dir
      * @return DirService
      */
-    public function giveFullAccessTo($dir): DirService
+    public function giveFullAccessDir(string $dir): DirService
     {
         return $this->addToDirAccessFlag($dir, self::FULL_ACCESS_PERMISSION);
     }
 
     /**
+     * @param string $dir
      * @return DirService
      */
-    public function removeFullAccessFrom($dir): DirService
+    public function removeFullAccessDir(string $dir): DirService
     {
         return $this->addToDirAccessFlag($dir, self::STANDARD_PERMISSION);
     }
@@ -176,9 +178,11 @@ class DirService {
     }
 
     /**
+     * @param string $dir
+     * @param $permission
      * @return DirService
      */
-    protected function addToDirAccessFlag($dir, $permission): DirService
+    protected function addToDirAccessFlag(string $dir, $permission): DirService
     {
         $this->dirAccessFlag[trim($dir)] = $permission;
         return $this;
